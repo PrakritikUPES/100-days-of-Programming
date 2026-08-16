@@ -1,0 +1,12 @@
+
+principal = float(input("Enter principal amount: "))
+rate = float(input("Enter annual interest rate (in %): "))
+time = float(input("Enter time period (in years): "))
+
+simple_interest = (principal * rate * time) / 100
+
+amount = principal * ((1 + rate / 100) ** time)
+compound_interest = amount - principal
+
+print("Simple Interest:", round(simple_interest, 2))
+print("Compound Interest:", round(compound_interest, 2))

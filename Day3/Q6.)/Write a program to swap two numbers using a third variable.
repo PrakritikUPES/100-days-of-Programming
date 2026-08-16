@@ -1,0 +1,7 @@
+a = input("Enter first number (a): ")
+b = input("Enter second number (b): ")
+print(f"Before swap: a = {a}, b = {b}")
+temp = a
+a = b
+b = temp
+print(f"After swap: a = {a}, b = {b}")

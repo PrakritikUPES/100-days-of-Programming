@@ -1,0 +1,10 @@
+
+total_seconds = int(input("Enter time in seconds: "))
+
+hours = total_seconds // 3600
+remaining_seconds = total_seconds % 3600
+minutes = remaining_seconds // 60
+seconds = remaining_seconds % 60
+
+print(f"Time (HH:MM:SS): {hours:02d}:{minutes:02d}:{seconds:02d}")
+print(f"{hours} hour(s), {minutes} minute(s), and {seconds} second(s)")

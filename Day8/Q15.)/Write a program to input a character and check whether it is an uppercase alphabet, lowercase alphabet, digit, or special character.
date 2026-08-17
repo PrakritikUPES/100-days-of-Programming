@@ -1,0 +1,12 @@
+#Write a program to input a character and check whether it is an uppercase alphabet, lowercase alphabet, digit, or special character.
+ch = input("Enter a single character: ")
+
+ch_lower = ch.lower()
+
+if len(ch) == 1 and ch_lower.isalpha():
+    if ch_lower in ('a', 'e', 'i', 'o', 'u'):
+        print(f"'{ch}' is a vowel.")
+    else:
+        print(f"'{ch}' is a consonant.")
+else:
+    print("Invalid input! Please enter a single alphabetical character.")

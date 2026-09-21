@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main(void) {
+    int a, b, temp_a, temp_b, remainder, gcd;
+    long long lcm;
+    printf("Enter two positive integers: ");
+    scanf("%d %d", &a, &b);
+    if (a <= 0 || b <= 0) {
+        printf("Please enter positive integers greater than 0.\n");
+        return 1;
+    }
+    temp_a = a;
+    temp_b = b;
+    while (temp_b != 0) {
+        remainder = temp_a % temp_b;
+        temp_a = temp_b;
+        temp_b = remainder;
+    }
+    gcd = temp_a;
+    lcm = ((long long)a / gcd) * b;
+    printf("The LCM of %d and %d is: %lld\n", a, b, lcm);
+
+    return 0;
+}

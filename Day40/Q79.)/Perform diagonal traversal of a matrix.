@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main(void) {
+    int rows, cols, i, j, sum;
+    int matrix[50][50];
+
+    printf("Enter number of rows and columns: ");
+    scanf("%d %d", &rows, &cols);
+
+    if (rows <= 0 || cols <= 0) {
+        printf("Invalid matrix dimensions.\n");
+        return 1;
+    }
+
+    printf("Enter elements of the matrix (%d x %d):\n", rows, cols);
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    printf("\nDiagonal Traversal:\n");
+    for (sum = 0; sum <= (rows + cols - 2); sum++) {
+        for (i = 0; i < rows; i++) {
+            j = sum - i;
+            if (j >= 0 && j < cols) {
+                printf("%d ", matrix[i][j]);
+            }
+        }
+    }
+    printf("\n");
+
+    return 0;
+}

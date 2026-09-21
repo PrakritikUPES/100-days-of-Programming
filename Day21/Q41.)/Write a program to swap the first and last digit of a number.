@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main(void) {
+    int n, temp, first_digit, last_digit;
+    int divisor = 1;
+    int middle_part, swapped_num;
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+    temp = n;
+    int is_negative = 0;
+    if (temp < 0) {
+        is_negative = 1;
+        temp = -temp;
+    }
+    if (temp < 10) {
+        printf("Number after swapping first and last digit: %d\n", n);
+        return 0;
+    }
+    last_digit = temp % 10;
+    while (temp >= 10) {
+        divisor *= 10;
+        temp /= 10;
+    }
+    first_digit = temp;
+    temp = is_negative ? -n : n;
+    middle_part = (temp % divisor) / 10;
+    swapped_num = (last_digit * divisor) + (middle_part * 10) + first_digit;
+    if (is_negative) {
+        swapped_num = -swapped_num;
+    }
+    printf("Number after swapping first and last digit: %d\n", swapped_num);
+
+    return 0;
+}

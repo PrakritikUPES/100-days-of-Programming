@@ -1,0 +1,38 @@
+#include <stdio.h>
+int main(void) {
+    long long num, temp;
+    int digit, max_digit = 0, max_count = 0;
+
+    printf("Enter an integer number: ");
+    scanf("%lld", &num);
+
+    if (num < 0) {
+        num = -num;
+    }
+
+    if (num == 0) {
+        printf("Most frequent digit: 0 (occurs 1 time)\n");
+        return 0;
+    }
+
+    for (digit = 0; digit <= 9; digit++) {
+        int current_count = 0;
+        temp = num;
+
+        while (temp > 0) {
+            if (temp % 10 == digit) {
+                current_count++;
+            }
+            temp /= 10;
+        }
+
+        if (current_count > max_count) {
+            max_count = current_count;
+            max_digit = digit;
+        }
+    }
+
+    printf("Most frequent digit: %d (occurs %d times)\n", max_digit, max_count);
+
+    return 0;
+}

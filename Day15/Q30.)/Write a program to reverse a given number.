@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main(void) {
+    int n, temp, remainder;
+    long long reversed = 0;
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+    temp = n;
+    while (temp != 0) {
+        remainder = temp % 10;
+        reversed = reversed * 10 + remainder;
+        temp /= 10;
+    }
+    printf("Reversed number: %lld\n", reversed);
+
+    return 0;
+}

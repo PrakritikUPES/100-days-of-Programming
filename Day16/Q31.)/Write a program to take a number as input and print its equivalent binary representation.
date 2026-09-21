@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main(void) {
+    int n, i;
+    int started = 0; // Flag to skip leading zeroes
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+    if (n == 0) {
+        printf("Binary: 0\n");
+        return 0;
+    }
+    if (n < 0) {
+        printf("Please enter a non-negative integer.\n");
+        return 1;
+    }
+    printf("Binary representation: ");
+    for (i = 31; i >= 0; i--) {
+        int bit = (n >> i) & 1;
+        if (bit == 1) {
+            started = 1;
+        }
+        if (started) {
+            printf("%d", bit);
+        }
+    }
+    printf("\n");
+
+    return 0;
+}

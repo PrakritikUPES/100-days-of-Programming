@@ -1,0 +1,35 @@
+\* Write a program to print the following pattern:
+
+*
+
+*
+*
+*
+
+*
+*
+*
+*
+*
+
+*
+*
+*
+
+*      *\
+#include <stdio.h>
+int main(void) {
+    int group, i;
+    int terms = 5;
+    for (group = 1; group <= terms; group++) {
+        int stars = (group <= 3) ? (2 * group - 1) : (2 * (terms - group + 1) - 1);
+        for (i = 1; i <= stars; i++) {
+            printf("*\n");
+        }
+        if (group < terms) {
+            printf("\n");
+        }
+    }
+
+    return 0;
+}

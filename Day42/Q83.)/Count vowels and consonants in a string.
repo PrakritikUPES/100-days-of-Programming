@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main(void) {
+    char ch;
+    int vowels = 0;
+    int consonants = 0;
+
+    while (scanf("%c", &ch) == 1 && ch != '\n') {
+        char lower = tolower(ch);
+
+        if (lower >= 'a' && lower <= 'z') {
+            if (lower == 'a' || lower == 'e' || lower == 'i' || lower == 'o' || lower == 'u') {
+                vowels++;
+            } else {
+                consonants++;
+            }
+        }
+    }
+
+    printf("Vowels: %d\n", vowels);
+    printf("Consonants: %d\n", consonants);
+
+    return 0;
+}

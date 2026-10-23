@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main(void) {
+    char ch;
+
+    while (scanf("%c", &ch) == 1 && ch != '\n') {
+        printf("%c\n", ch);
+    }
+
+    return 0;
+}

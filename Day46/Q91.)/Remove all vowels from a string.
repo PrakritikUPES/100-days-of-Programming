@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int write_index = 0;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    for (int read_index = 0; str[read_index] != '\0'; read_index++) {
+        char ch = str[read_index];
+
+        if (!(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+              ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U')) {
+            str[write_index] = ch;
+            write_index++;
+        }
+    }
+
+    str[write_index] = '\0';
+
+    printf("String without vowels: %s", str);
+
+    return 0;
+}

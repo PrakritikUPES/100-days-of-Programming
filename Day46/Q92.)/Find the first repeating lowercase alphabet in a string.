@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    int seen[26] = {0};
+    char first_repeating = '\0';
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] >= 'a' && str[i] <= 'z') {
+            int index = str[i] - 'a';
+
+            if (seen[index] == 1) {
+                first_repeating = str[i];
+                break;
+            }
+
+            seen[index] = 1;
+        }
+    }
+
+    if (first_repeating != '\0') {
+        printf("First repeating lowercase alphabet: %c\n", first_repeating);
+    } else {
+        printf("No repeating lowercase alphabet found.\n");
+    }
+
+    return 0;
+}
